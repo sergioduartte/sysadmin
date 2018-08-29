@@ -1,0 +1,54 @@
+Administração de Sistemas
+Lista de exercícios 1
+ 
+Nessa lista de exercícios você irá utilizar os seguintes comandos: cat, head, tail, expr e grep. Informações sobre esses comandos podem ser obtidas usando o comando man. 
+
+Além disso, você irá utilizar o recurso de substituição de comandos do shell (`cmd`), que faz com que a saída da execução de um comando qualquer (representado por cmd) seja expandida na linha de comando do shell.
+ 
+Antes de começar a resolver as questões abaixo, faça o download do arquivo lista-1.tar anexado a essa tarefa e execute o comando abaixo, a partir do seu diretório corrente:
+ 
+$ tar –xvf lista-1.tar
+ 
+Depois disso execute:
+ 
+$ cd lista-1
+ 
+Agora, resolva as questões abaixo. Em todos os casos, quanto menor for o número de caracteres do comando escrito, melhor será a sua solução. As respostas correspondentes a cada pergunta (não os comandos que você deve escrever, mas o que deve aparecer na saída padrão ao executar o comando correto) podem ser encontradas no diretório respostas.
+ 
+1)   Escreva o comando que lista a linha onde aparece a única ocorrência do termo “synonymous” no arquivo entrada, junto com as 6 linhas anteriores e 1 linha posterior a essa ocorrência.
+
+grep -B 6 -A 1 synonymous entrada
+
+2)   Escreva as onde o padrão “atom” ocorre no arquivo entrada.
+	
+	cat entrada | grep -c atom
+
+3)   Escreva o comando que conta o número de linhas vazias no arquivo entrada.
+	
+	cat entrada | grep -x -c ""
+
+4)   Escreva o comando que apresenta as linhas não vazias que não contêm vogais no arquivo entrada.
+
+	cat entrada | grep [aeiouAEIOU] -v | grep -x "" -v
+
+5)   Escreva o comando que apresenta a primeira linha onde o padrão “atom” aparece no arquivo entrada.
+
+	grep "atom" -m 1 entrada
+
+6)   Escreva o comando que apresenta o número da linha e a linha onde a quinta ocorrência do padrão “atom” aparece no arquivo entrada.
+
+	cat entrada | grep -n atom -m 5 | tail -1
+
+7)   Escreva o comando que apresenta apenas o número da linha onde a quinta ocorrência do padrão “atom” aparece no arquivo entrada.
+
+	cat entrada | grep -n atom -m 5 | tail -1 | cut -d : -f 1
+
+8)   Escreva o comando que lista as ocorrências da palavra “match” nas 20 primeiras linhas do arquivo entrada.
+
+    grep -w "match" -m 20 entrada
+
+9)   Escreva o comando que apresenta a soma do número de ocorrências do padrão “match” nas primeiras 100 linhas e nas últimas 100 linhas do arquivo entrada.
+
+    expr `cat entrada | head -n 100| grep -c match` + `cat entrada | tail -n 100| grep -c match`
+
+10) Escreva o programa que apresenta o número de ocorrências do padrão “match” no terço médio do arquivo entrada, assumindo que você já sabe que o arquivo entrada tem 375 linhas.
