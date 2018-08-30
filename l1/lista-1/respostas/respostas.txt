@@ -52,3 +52,5 @@ grep -B 6 -A 1 synonymous entrada
     expr `cat entrada | head -n 100| grep -c match` + `cat entrada | tail -n 100| grep -c match`
 
 10) Escreva o programa que apresenta o número de ocorrências do padrão “match” no terço médio do arquivo entrada, assumindo que você já sabe que o arquivo entrada tem 375 linhas.
+
+    head -250 entrada | tail -125 | grep match -c
