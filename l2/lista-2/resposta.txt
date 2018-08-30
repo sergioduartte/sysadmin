@@ -1,0 +1,39 @@
+Administração de Sistemas
+Lista de exercícios 2
+ 
+Antes de começar a resolver as questões abaixo, faça o download do arquivo lista-1.tar anexado a essa tarefa e execute o comando abaixo, a partir do seu diretório corrente:
+ 
+$ tar –xvf lista-2.tar
+ 
+Depois disso execute:
+ 
+$ cd lista-2
+ 
+Agora, considerando os comandos e diretivas do shell já aprendidas, resolva as questões abaixo. Em todos os casos, quanto menor for o número de caracteres do comando escrito, melhor será a sua solução. As respostas correspondentes a cada pergunta (não os comandos que você deve escrever, mas o que deve aparecer na saída padrão ao executar o comando correto) podem ser encontradas no diretório respostas.
+ 
+1)   Escreva um script que conte o número de arquivos não ocultos de um diretório, cujo caminho absoluto ou relativo é passado como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin como parâmetro).
+
+	ls $1 | wc -l
+
+2)  Escreva um script que conte o número total de arquivos de um diretório, cujo caminho absoluto ou relativo é passado como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin como parâmetro).
+
+	ls -a $1 | wc -l
+
+3)	Escreva um script que liste apenas os arquivos de um diretório passado como parâmetro ($1), cujos nomes começam com um padrão também passado como parâmetro ($2) (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin e a como parâmetros).
+
+	ls -a $1 | grep ^$2
+
+4)	Escreva um comando que dê uma boa estimativa do número de arquivos do tipo regular que existem na árvore cuja raiz começa em usr.
+
+	ls -lahR $1 | grep -c '^-'
+
+5)	Escreva um comando que dê uma boa estimativa do número de arquivos do tipo diretório que existem na árvore cuja raiz começa em usr.
+
+	ls -lahR $1 | grep -c '^d'
+
+6)	Escreva uma sequência de comandos que calcule a soma dos tamanhos de todos os arquivos contidos no diretório respostas. Obs.: qualquer efeito colateral que a execução do comando possa gerar ao estado do sistema de arquivos deve ser desfeito na própria sequência de comandos.
+
+7)	Escreva um script que ordene em ordem alfabética os arquivos de dois diretórios diferentes recebidos como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin e usr/sbin como parâmetros).
+
+8)	Escreva um script que ordene em ordem alfabética (sem considerar maiúsculas e minúsculas) os arquivos de dois diretórios diferentes recebidos como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin e usr/sbin como parâmetros).
+
