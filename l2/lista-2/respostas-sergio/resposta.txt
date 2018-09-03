@@ -25,15 +25,19 @@ Agora, considerando os comandos e diretivas do shell já aprendidas, resolva as 
 
 4)	Escreva um comando que dê uma boa estimativa do número de arquivos do tipo regular que existem na árvore cuja raiz começa em usr.
 
-	ls -lahR $1 | grep -c '^-'
+	ls -lR $1 | grep -c '^-'
 
 5)	Escreva um comando que dê uma boa estimativa do número de arquivos do tipo diretório que existem na árvore cuja raiz começa em usr.
 
-	ls -lahR $1 | grep -c '^d'
+	ls -lR $1 | grep -c '^d'
 
 6)	Escreva uma sequência de comandos que calcule a soma dos tamanhos de todos os arquivos contidos no diretório respostas. Obs.: qualquer efeito colateral que a execução do comando possa gerar ao estado do sistema de arquivos deve ser desfeito na própria sequência de comandos.
+	
+	cat /respostas/* | wc -c
 
 7)	Escreva um script que ordene em ordem alfabética os arquivos de dois diretórios diferentes recebidos como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin e usr/sbin como parâmetros).
+	
+	(ls $1; ls $2) | sort
 
 8)	Escreva um script que ordene em ordem alfabética (sem considerar maiúsculas e minúsculas) os arquivos de dois diretórios diferentes recebidos como parâmetro (o arquivo resposta tem o resultado para quando o script é chamado com usr/bin e usr/sbin como parâmetros).
-
+	(ls $1; ls $2) | sort -f
