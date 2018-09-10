@@ -1,0 +1,29 @@
+Administração de Sistemas
+Lista de exercícios 3
+ 
+Antes de começar a resolver as questões abaixo, faça o download do arquivo lista-3.tar anexado a essa tarefa e execute o comando abaixo, a partir do seu diretório corrente:
+ 
+$ tar –xvf lista-3.tar
+ 
+Depois disso execute:
+ 
+$ cd lista-3
+ 
+Agora, considerando os comandos e diretivas do shell já aprendidas, além do comando find explicado nessa aula, resolva as questões abaixo. Em todos os casos, quanto menor for o número de caracteres do comando escrito, melhor será a sua solução. As respostas correspondentes a cada pergunta (não os comandos que você deve escrever, mas o que deve aparecer na saída padrão ao executar o comando correto) podem ser encontradas no diretório respostas.
+ 
+1. Escreva um script que receba como parâmetros um diretório e um tipo de arquivo (f para file e d para diretório) e imprima na saída padrão o número de arquivos daquele tipo que existem na árvore de diretórios que começa no diretório passado como parâmetro (as respostas dadas são para o número de diretórios e arquivos abaixo de files/resource-allocation-service).
+
+2. Escreva um script que conta o número de arquivos fonte java na árvore de diretórios que começa no diretório passado como parâmetro (a resposta dada é para o diretório files/resource-allocation-service).
+
+3. Escreva um script que imprime os nomes completos dos arquivos da árvore de diretórios do diretório passado como parâmetro que têm uma determinada permissão de acesso (ex. 666) também passado como parâmetro (a resposta dada é para os parâmetros files/federated-network-service e 755).
+
+4. Escreva um comando que liste todos os arquivos abaixo do diretório resource-allocation-service que têm um tamanho entre 9k e 10k bytes.
+
+5. Escreva um comando que liste todos os arquivos abaixo do diretório fogbowcloud.org cujos tamanhos são menores que 10k bytes.
+
+6. Escreva um script que receba um diretório como parâmetro e imprima os diretórios vazios abaixo desse diretório (a resposta dada é para files/resource-allocation-service).
+
+7. Escreva um comando que verifique em que arquivos regulares (ou seja, excluindo diretórios e arquivos executáveis) o padrão KEY aparece.
+
+8. Escreva um comando que apaga todos os arquivos .class da árvore de diretórios.
+
